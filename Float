@@ -1,0 +1,11 @@
+.data 
+	
+	PI: .float 3.14
+	
+.text 
+	l.s $f1, PI
+	li $v0, 2
+	mov.s $f12 ,$f1
+	syscall
+	
+
