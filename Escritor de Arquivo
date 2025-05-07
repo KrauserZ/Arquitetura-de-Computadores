@@ -1,0 +1,23 @@
+.data
+
+	conteudoArq: .asciiz "olá, galera! Bora aprender esse paranaue"	 # Frase do Arquivo
+	localArq:	.asciiz	"C:/Users/alunok05/Downloads/ArquivoTeste.txt"	# Endereço da Escrita do arquivo
+
+.text
+	
+	la $v0 , 13
+	la $a0, localArq
+	li $a1, 1
+	syscall
+	
+	move $s0,$v0
+	
+	li $v0, 15
+	move $a0, $s0
+	la $a1, conteudoArq
+	li $a2, 41
+	syscall
+	
+	li $v0, 16
+	move $a0, $s0
+	syscall
