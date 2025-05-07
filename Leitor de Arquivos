@@ -1,0 +1,26 @@
+.data
+
+	localArquivo:	.asciiz	"C:/Users/alunok05/Downloads/ArquivoTeste.txt" # Endereço da leitura do arquivo
+	conteudoArquivo: .space 1024
+.text
+	
+	la $v0 , 13
+	la $a0, localArquivo
+	li $a1, 0
+	syscall
+	
+	move $s0,$v0
+	
+	move $a0,$s0
+	li $v0, 14
+	la $a1, conteudoArquivo
+	li $a2,1024
+	syscall
+	
+	li $v0, 4
+	move $a0, $a1
+	syscall
+	
+	li $v0, 16
+	move $a0, $s0
+	syscall
